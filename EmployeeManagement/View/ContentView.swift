@@ -19,28 +19,30 @@ struct ContentView: View {
 var body: some View {
     
     NavigationView{
-      List{
-          ForEach(self.employees,id:\.self){item in
-              HStack{
-              Text(item.name ?? "Unknown")
-              
-              Spacer()
+        ZStack {
+            List{
+              ForEach(self.employees,id:\.self){item in
+                  HStack{
+                  Text(item.name ?? "Unknown")
                   
+                  Spacer()
+                      
+                  }
+              }.onDelete(perform: deleteEmployee)
+         }
+          .navigationBarItems(leading: EditButton() ,trailing:
+              Button{
+                  showingAddEmployeeView.toggle()
+              } label: {
+                  Image(systemName:"plus")
               }
-          }.onDelete(perform: deleteEmployee)
-     }
-      .navigationBarItems(leading: EditButton() ,trailing:
-          Button{
-              showingAddEmployeeView.toggle()
-          } label: {
-              Image(systemName:"plus")
-          }
-          .sheet(isPresented:$showingAddEmployeeView){
-              AddEmployeeView().environment(\.managedObjectContext,self.managedObjectContext)
-          }
-      )
-     .navigationTitle("Employee")
+              .sheet(isPresented:$showingAddEmployeeView){
+                  AddEmployeeView().environment(\.managedObjectContext,self.managedObjectContext)
+              }
+          )
+         .navigationTitle("Employee")
      .navigationBarTitleDisplayMode(.inline)
+        }// zstack
   }
 }
     
