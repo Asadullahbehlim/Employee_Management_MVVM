@@ -11,8 +11,12 @@
 		4160E423282120310068DC77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E422282120310068DC77 /* ContentView.swift */; };
 		4160E425282120320068DC77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4160E424282120320068DC77 /* Assets.xcassets */; };
 		4160E428282120320068DC77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4160E427282120320068DC77 /* Preview Assets.xcassets */; };
-		4160E42A282120320068DC77 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E429282120320068DC77 /* Persistence.swift */; };
 		4160E42D282120320068DC77 /* EmployeeManagement.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4160E42B282120320068DC77 /* EmployeeManagement.xcdatamodeld */; };
+		4160E434282120F10068DC77 /* AddEmployeeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E433282120F10068DC77 /* AddEmployeeView.swift */; };
+		4160E438282128A80068DC77 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E437282128A80068DC77 /* Persistence.swift */; };
+		4160E44728213BAD0068DC77 /* Employee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E44528213BAD0068DC77 /* Employee+CoreDataClass.swift */; };
+		4160E44828213BAD0068DC77 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E44628213BAD0068DC77 /* Employee+CoreDataProperties.swift */; };
+		416CEAF128223E0B001A33DF /* ValidationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416CEAF028223E0B001A33DF /* ValidationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,8 +25,12 @@
 		4160E422282120310068DC77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4160E424282120320068DC77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4160E427282120320068DC77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4160E429282120320068DC77 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		4160E42C282120320068DC77 /* EmployeeManagement.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EmployeeManagement.xcdatamodel; sourceTree = "<group>"; };
+		4160E433282120F10068DC77 /* AddEmployeeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeView.swift; sourceTree = "<group>"; };
+		4160E437282128A80068DC77 /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		4160E44528213BAD0068DC77 /* Employee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		4160E44628213BAD0068DC77 /* Employee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Employee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		416CEAF028223E0B001A33DF /* ValidationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +47,8 @@
 		4160E414282120310068DC77 = {
 			isa = PBXGroup;
 			children = (
+				4160E44528213BAD0068DC77 /* Employee+CoreDataClass.swift */,
+				4160E44628213BAD0068DC77 /* Employee+CoreDataProperties.swift */,
 				4160E41F282120310068DC77 /* EmployeeManagement */,
 				4160E41E282120310068DC77 /* Products */,
 			);
@@ -55,10 +65,11 @@
 		4160E41F282120310068DC77 /* EmployeeManagement */ = {
 			isa = PBXGroup;
 			children = (
-				4160E420282120310068DC77 /* EmployeeManagementApp.swift */,
-				4160E422282120310068DC77 /* ContentView.swift */,
+				416CEAEF28223DDE001A33DF /* Extension */,
+				4160E436282121370068DC77 /* App */,
+				4160E435282121040068DC77 /* View */,
 				4160E424282120320068DC77 /* Assets.xcassets */,
-				4160E429282120320068DC77 /* Persistence.swift */,
+				4160E437282128A80068DC77 /* Persistence.swift */,
 				4160E42B282120320068DC77 /* EmployeeManagement.xcdatamodeld */,
 				4160E426282120320068DC77 /* Preview Content */,
 			);
@@ -71,6 +82,31 @@
 				4160E427282120320068DC77 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4160E435282121040068DC77 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4160E422282120310068DC77 /* ContentView.swift */,
+				4160E433282120F10068DC77 /* AddEmployeeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4160E436282121370068DC77 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4160E420282120310068DC77 /* EmployeeManagementApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		416CEAEF28223DDE001A33DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				416CEAF028223E0B001A33DF /* ValidationExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4160E42D282120320068DC77 /* EmployeeManagement.xcdatamodeld in Sources */,
-				4160E42A282120320068DC77 /* Persistence.swift in Sources */,
+				4160E44728213BAD0068DC77 /* Employee+CoreDataClass.swift in Sources */,
+				4160E434282120F10068DC77 /* AddEmployeeView.swift in Sources */,
 				4160E423282120310068DC77 /* ContentView.swift in Sources */,
+				416CEAF128223E0B001A33DF /* ValidationExtension.swift in Sources */,
 				4160E421282120310068DC77 /* EmployeeManagementApp.swift in Sources */,
+				4160E438282128A80068DC77 /* Persistence.swift in Sources */,
+				4160E44828213BAD0068DC77 /* Employee+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,8 +321,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,8 +351,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
