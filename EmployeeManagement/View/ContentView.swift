@@ -23,13 +23,19 @@ var body: some View {
             List{
               ForEach(self.employees,id:\.self){item in
                   HStack{
-                  Text(item.name ?? "Unknown")
+                    Circle()
+                   .foregroundColor(.green)
+                    .frame(width: 12, height: 12, alignment: .center)
+                    Text(item.name ?? "Unknown")
+                          .fontWeight(.semibold)
                   
                   Spacer()
                       
-                  }
+                  } //Hstack End
+                  .padding(.vertical, 10)
               }.onDelete(perform: deleteEmployee)
          }
+            
           .navigationBarItems(leading: EditButton() ,trailing:
               Button{
                   showingAddEmployeeView.toggle()
@@ -41,10 +47,15 @@ var body: some View {
               }
           )
          .navigationTitle("Employee")
-     .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
+            if employees.count == 0 {
+            EmptyView()
+            }
         }// zstack
-  }
+    
+    }
 }
+
     
 // MARK: - funtions
 

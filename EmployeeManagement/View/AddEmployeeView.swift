@@ -33,10 +33,16 @@ struct AddEmployeeView: View {
         var body: some View {
             NavigationView {
                 VStack {
-                    Form {
+                    VStack(alignment: .leading, spacing: 20) {
                         // MARK: - Emp Name
                         TextField("Employee Name", text: $name)
+                            .padding()
                             .keyboardType(.phonePad)
+                            .background(Color(UIColor.tertiarySystemFill))
+                            .cornerRadius(9)
+                            .font(.system(size: 18, weight: .semibold, design: .default))
+                        
+                        
                         
                         // MARK: - gender
                     
@@ -44,17 +50,32 @@ struct AddEmployeeView: View {
                             ForEach(genders, id: \.self)
                             {
                                 Text($0)
+                                
                             }
-                        }.pickerStyle(.segmented)
+                        }
+                        .pickerStyle(.segmented)
+                        
 
                         
                         // MARK: - Mobile
-                         TextField("Mobile no.", text: $mobileno)
+                         TextField("Mobile No.", text: $mobileno)
+                            .padding()
                             .keyboardType(.numberPad)
+                            .background(Color(UIColor.tertiarySystemFill))
+                            .cornerRadius(9)
+                            .font(.system(size: 18, weight: .semibold, design: .default))
+                        
+                        
 
                         // MARK: - Email
                          TextField("Employee Email", text: $email)
+                            .padding()
+                        
                             .keyboardType(.emailAddress)
+                            .background(Color(UIColor.tertiarySystemFill))
+                            .cornerRadius(9)
+                            .font(.system(size: 18, weight: .semibold, design: .default))
+                        
 
                         
                      // MARK: - save
@@ -66,6 +87,7 @@ struct AddEmployeeView: View {
                                    errorShowing = true
                                    errorTitle = "Invalid Mobile Number"
                                    errorMessage = "Make sure to enter correct Mobile\nNumber for new Employee Record."
+                                       
                                    return
                                    }
                                    
@@ -73,6 +95,7 @@ struct AddEmployeeView: View {
                                    errorShowing = true
                                    errorTitle = "Invalid EmailId"
                                    errorMessage = "Make sure to enter correct Email\nId for new Employee Record."
+                                       
                                    return
                                    }
                                        
@@ -87,6 +110,7 @@ struct AddEmployeeView: View {
                                    }
                                    catch{
                                    print(error)
+                                
                                    }
                                    } else{
                                        errorShowing = true
@@ -94,14 +118,23 @@ struct AddEmployeeView: View {
                                        errorMessage = "Make sure to enter something for\nthe new Employee Record."
                                        return
                                    }
+                        
                                    self.presentationMode.wrappedValue.dismiss()
-                               } label: {
-                               Text("Add Employee")
                                }
+                         label: {
+                               Text("Add Employee")
+                                 .font(.system(size: 24, weight: .bold, design: .default))
+                                 .frame(minWidth: .zero, maxWidth: .infinity)
+                         }
+                       
+                         .buttonStyle(.borderedProminent)
+                         .padding(.vertical)
                             
-                    //  Spacer()
+                      Spacer()
                         
                     }
+                    .padding(.horizontal)
+                    //Vstack
                 } //Vstack
                 .navigationBarTitle("New Employee", displayMode: .inline)
                 .navigationBarItems(trailing: Button { self.presentationMode.wrappedValue.dismiss()
@@ -109,6 +142,9 @@ struct AddEmployeeView: View {
                 } label: {
                     Image(systemName: "xmark")
                 } )
+                .alert(isPresented: $errorShowing) {
+                    Alert(title: Text(errorTitle), message: Text (errorMessage))
+                }
             }
         }
     }

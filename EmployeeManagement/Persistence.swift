@@ -13,12 +13,12 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for _ in 0..<5 {
                   let employee = Employee(context:viewContext)
                   employee.id = UUID()
-                  employee.name = "Anuj Soni"
-                  employee.mobileno = "8962422004"
-                  employee.email = "doni381@gmail.com"
+                  employee.name = "Asad"
+                  employee.mobileno = "9000000000"
+                  employee.email = "Employee@gmail.com"
               }
 
         
