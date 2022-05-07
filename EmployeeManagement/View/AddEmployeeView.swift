@@ -134,6 +134,7 @@ struct AddEmployeeView: View {
                         
                     }
                     .padding(.horizontal)
+                    .padding(.vertical, 30)
                     //Vstack
                 } //Vstack
                 .navigationBarTitle("New Employee", displayMode: .inline)
