@@ -17,8 +17,7 @@ struct EmptyView: View {
     
     var body: some View {
         
- 
-        NavigationView {
+    NavigationView {
      ZStack {
          VStack(alignment: .center, spacing: 20) {
              Spacer()
@@ -36,9 +35,9 @@ struct EmptyView: View {
                             self.showingAddEmployeeView.toggle()
                             }) {
                             Image(systemName: "plus.circle.fill")
-                                .resizable()
-                               .scaledToFit()
-                               .frame(width: 54, height: 54, alignment: .center)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 54, height: 54, alignment: .center)
                         }
                         .sheet(isPresented:$showingAddEmployeeView)
                         {
@@ -48,11 +47,11 @@ struct EmptyView: View {
                         .padding(.bottom, 80)
                         .padding(.leading, 290)
        
-     }
+     } // Zstack
             
-        }
-    }
-    }
+    } // Navigation View
+    } // Body
+    } // Struct
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyView()

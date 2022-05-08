@@ -48,8 +48,8 @@ struct AddEmployeeView: View {
                             {
                                 Text($0)
                                 
-                            }
-                        }
+                            } // ForEach
+                        } // Picker
                         .pickerStyle(.segmented)
                         
 
@@ -116,19 +116,19 @@ struct AddEmployeeView: View {
                                    }
                         
                                    self.presentationMode.wrappedValue.dismiss()
-                               }
+                               } // Button
                          label: {
                                Text("Add Employee")
                                  .font(.system(size: 24, weight: .bold, design: .default))
                                  .frame(minWidth: .zero, maxWidth: .infinity)
-                         }
+                         } // Label
                        
                          .buttonStyle(.borderedProminent)
                          .padding(.vertical)
                             
                       Spacer()
                         
-                    }
+                    } // vstack
                     .padding(.horizontal)
                     .padding(.vertical, 30)
                     
@@ -141,10 +141,10 @@ struct AddEmployeeView: View {
                 } )
                 .alert(isPresented: $errorShowing) {
                     Alert(title: Text(errorTitle), message: Text (errorMessage))
-                }
-            }
-        }
-    }
+                } // Alert
+            } // navigation View
+        } // Body
+    } // Struct
 
 
 struct AddEmployeeView_Previews: PreviewProvider {

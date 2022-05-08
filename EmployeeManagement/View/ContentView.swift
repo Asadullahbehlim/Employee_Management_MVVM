@@ -36,7 +36,7 @@ var body: some View {
                   } //Hstack End
                   .padding(.vertical, 10)
               }.onDelete(perform: deleteEmployee)
-         }
+         } // List
             
           .navigationBarItems(leading: EditButton() ,trailing:
               Button{
@@ -46,8 +46,8 @@ var body: some View {
               } // Label
               .sheet(isPresented:$showingAddEmployeeView){
                   AddEmployeeView().environment(\.managedObjectContext,self.managedObjectContext)
-              }
-          )
+              } // sheet
+          ) // Navig Bar Items
          .navigationTitle("Employee")
         .navigationBarTitleDisplayMode(.inline)
             if employees.count == 0 {
@@ -55,8 +55,8 @@ var body: some View {
             }
         }// zstack
     
-    }
-}
+    } // Navigation View
+}// Body
 
     
 // MARK: - funtions
@@ -67,14 +67,14 @@ private func deleteEmployee(at offsets:IndexSet){
         managedObjectContext.delete(employee)
         do{
             try self.managedObjectContext.save()
-        }
+        } // do
         catch{
             print(error)
-        }
-    }
-}
+        } // catch
+    } // For
+} // Function
 
-}
+} // Struct
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
