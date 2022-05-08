@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4152CC902824E59000B040BE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152CC8F2824E59000B040BE /* SettingsView.swift */; };
-		4152CC922824F10000B040BE /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4152CC912824F10000B040BE /* FormRowStaticView.swift */; };
 		4160E421282120310068DC77 /* EmployeeManagementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E420282120310068DC77 /* EmployeeManagementApp.swift */; };
 		4160E423282120310068DC77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E422282120310068DC77 /* ContentView.swift */; };
 		4160E425282120320068DC77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4160E424282120320068DC77 /* Assets.xcassets */; };
@@ -25,8 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4152CC8F2824E59000B040BE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		4152CC912824F10000B040BE /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
 		4160E41D282120310068DC77 /* EmployeeManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmployeeManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4160E420282120310068DC77 /* EmployeeManagementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeManagementApp.swift; sourceTree = "<group>"; };
 		4160E422282120310068DC77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,9 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				416CEAF42822511E001A33DF /* Info.plist */,
-				416CEAEF28223DDE001A33DF /* Extension */,
 				4160E436282121370068DC77 /* App */,
 				4160E435282121040068DC77 /* View */,
+				416CEAEF28223DDE001A33DF /* Extension */,
 				4160E424282120320068DC77 /* Assets.xcassets */,
 				4160E437282128A80068DC77 /* Persistence.swift */,
 				4160E42B282120320068DC77 /* EmployeeManagement.xcdatamodeld */,
@@ -104,8 +100,6 @@
 				416CEAF228224F47001A33DF /* LaunchScreen.storyboard */,
 				418186AD282273AC0071795A /* EmployeeDetailView.swift */,
 				418186AF282278CC0071795A /* EmptyView.swift */,
-				4152CC8F2824E59000B040BE /* SettingsView.swift */,
-				4152CC912824F10000B040BE /* FormRowStaticView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -198,7 +192,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4160E42D282120320068DC77 /* EmployeeManagement.xcdatamodeld in Sources */,
-				4152CC922824F10000B040BE /* FormRowStaticView.swift in Sources */,
 				4160E44728213BAD0068DC77 /* Employee+CoreDataClass.swift in Sources */,
 				4160E434282120F10068DC77 /* AddEmployeeView.swift in Sources */,
 				418186AE282273AC0071795A /* EmployeeDetailView.swift in Sources */,
@@ -208,7 +201,6 @@
 				4160E421282120310068DC77 /* EmployeeManagementApp.swift in Sources */,
 				4160E438282128A80068DC77 /* Persistence.swift in Sources */,
 				4160E44828213BAD0068DC77 /* Employee+CoreDataProperties.swift in Sources */,
-				4152CC902824E59000B040BE /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

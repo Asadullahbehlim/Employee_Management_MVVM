@@ -17,33 +17,7 @@ struct EmptyView: View {
     
     var body: some View {
         
-//        VStack(alignment: .center, spacing: 20) {
-//
-//        Text("Add Your Data Here")
-//              //  .layoutPriority(1)
-//                .font(.system(.title, design: .rounded))
-//    } //Vstack
-//        .padding(.horizontal)
-//     ZStack {
-//       // VStack(alignment: .center, spacing: 70)
-//
-//                Button (action: {
-//                self.showingAddEmployeeView.toggle()
-//                }) {
-//                Image(systemName: "plus.circle.fill")
-//                    .resizable()
-//                   .scaledToFit()
-//                   .frame(width: 48, height: 48, alignment: .center)
-//            }
-//            .sheet(isPresented:$showingAddEmployeeView)
-//            {
-//              AddEmployeeView()
-//            }
-//        } //Vstack
-//            .padding(.bottom, 15)
-//            .padding(.trailing, 15)
-//     //  )
-        
+ 
         NavigationView {
      ZStack {
          VStack(alignment: .center, spacing: 20) {
@@ -84,3 +58,33 @@ struct EmptyView_Previews: PreviewProvider {
         EmptyView()
     }
 }
+
+
+// Alternate Try
+//        VStack(alignment: .center, spacing: 20) {
+//
+//        Text("Add Your Data Here")
+//              //  .layoutPriority(1)
+//                .font(.system(.title, design: .rounded))
+//    } //Vstack
+//        .padding(.horizontal)
+//     ZStack {
+//       // VStack(alignment: .center, spacing: 70)
+//
+//                Button (action: {
+//                self.showingAddEmployeeView.toggle()
+//                }) {
+//                Image(systemName: "plus.circle.fill")
+//                    .resizable()
+//                   .scaledToFit()
+//                   .frame(width: 48, height: 48, alignment: .center)
+//            }
+//            .sheet(isPresented:$showingAddEmployeeView)
+//            {
+//              AddEmployeeView()
+//            }
+//        } //Vstack
+//            .padding(.bottom, 15)
+//            .padding(.trailing, 15)
+//     //  )
+       

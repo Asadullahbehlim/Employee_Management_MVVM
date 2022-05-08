@@ -10,12 +10,14 @@ import CoreData
 
 struct ContentView: View {
 
+    // MARK: - Property
 @Environment(\.managedObjectContext) var managedObjectContext
 
 @FetchRequest(entity: Employee.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Employee.name, ascending: true)]) var employees: FetchedResults<Employee>
     
 @State private var showingAddEmployeeView:Bool = false
     
+   // MARK: - Body
 var body: some View {
     
     NavigationView{
@@ -41,7 +43,7 @@ var body: some View {
                   showingAddEmployeeView.toggle()
               } label: {
                   Image(systemName:"plus")
-              }
+              } // Label
               .sheet(isPresented:$showingAddEmployeeView){
                   AddEmployeeView().environment(\.managedObjectContext,self.managedObjectContext)
               }

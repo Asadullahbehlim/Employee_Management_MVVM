@@ -20,7 +20,6 @@ struct AddEmployeeView: View {
 
     @State private var mobileno: String = ""
 
-
      let genders = ["Male", "Female"]
     
     @State private var errorShowing: Bool = false
@@ -41,8 +40,6 @@ struct AddEmployeeView: View {
                             .background(Color(UIColor.tertiarySystemFill))
                             .cornerRadius(9)
                             .font(.system(size: 18, weight: .semibold, design: .default))
-                        
-                        
                         
                         // MARK: - gender
                     
@@ -70,7 +67,6 @@ struct AddEmployeeView: View {
                         // MARK: - Email
                          TextField("Employee Email", text: $email)
                             .padding()
-                        
                             .keyboardType(.emailAddress)
                             .background(Color(UIColor.tertiarySystemFill))
                             .cornerRadius(9)
@@ -82,7 +78,7 @@ struct AddEmployeeView: View {
                        
                         Button{
                                    if self.name != ""{
-                                   
+                                       
                                    if !mobileno.isValidPhone{
                                    errorShowing = true
                                    errorTitle = "Invalid Mobile Number"
@@ -135,7 +131,7 @@ struct AddEmployeeView: View {
                     }
                     .padding(.horizontal)
                     .padding(.vertical, 30)
-                    //Vstack
+                    
                 } //Vstack
                 .navigationBarTitle("New Employee", displayMode: .inline)
                 .navigationBarItems(trailing: Button { self.presentationMode.wrappedValue.dismiss()
