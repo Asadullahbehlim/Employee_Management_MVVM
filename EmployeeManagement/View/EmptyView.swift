@@ -29,23 +29,24 @@ struct EmptyView: View {
                 .padding(.horizontal, 10)
                 .padding(.vertical, 10)
            
-           VStack(alignment: .leading, spacing: 70) {
-                  Spacer()
-                            Button (action: {
-                            self.showingAddEmployeeView.toggle()
-                            }) {
-                            Image(systemName: "plus.circle.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 54, height: 54, alignment: .center)
-                        }
-                        .sheet(isPresented:$showingAddEmployeeView)
-                        {
-                          AddEmployeeView()
-                        }
+         VStack(alignment: .leading, spacing: 70) {
+                          Spacer()
+                Button (action: {
+               self.showingAddEmployeeView.toggle()
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .scaledToFit()
+                    .foregroundColor(.indigo)
+                    .frame(width: 54, height: 54, alignment: .center)
+                    }
+                    .sheet(isPresented:$showingAddEmployeeView)
+                    {
+                      AddEmployeeView()
+                    }
                     } //Vstack
-                        .padding(.bottom, 80)
-                        .padding(.leading, 290)
+                    .padding(.bottom, 80)
+                    .padding(.leading, 290)
        
      } // Zstack
             
@@ -55,6 +56,7 @@ struct EmptyView: View {
 struct EmptyView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyView()
+          //  .preferredColorScheme(.dark)
     }
 }
 

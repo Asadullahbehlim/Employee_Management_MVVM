@@ -18,7 +18,6 @@
 		4160E44828213BAD0068DC77 /* Employee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4160E44628213BAD0068DC77 /* Employee+CoreDataProperties.swift */; };
 		416CEAF128223E0B001A33DF /* ValidationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416CEAF028223E0B001A33DF /* ValidationExtension.swift */; };
 		416CEAF328224F47001A33DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 416CEAF228224F47001A33DF /* LaunchScreen.storyboard */; };
-		418186AE282273AC0071795A /* EmployeeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418186AD282273AC0071795A /* EmployeeDetailView.swift */; };
 		418186B0282278CC0071795A /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418186AF282278CC0071795A /* EmptyView.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		416CEAF028223E0B001A33DF /* ValidationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationExtension.swift; sourceTree = "<group>"; };
 		416CEAF228224F47001A33DF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		416CEAF42822511E001A33DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		418186AD282273AC0071795A /* EmployeeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailView.swift; sourceTree = "<group>"; };
 		418186AF282278CC0071795A /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,7 +96,6 @@
 				4160E422282120310068DC77 /* ContentView.swift */,
 				4160E433282120F10068DC77 /* AddEmployeeView.swift */,
 				416CEAF228224F47001A33DF /* LaunchScreen.storyboard */,
-				418186AD282273AC0071795A /* EmployeeDetailView.swift */,
 				418186AF282278CC0071795A /* EmptyView.swift */,
 			);
 			path = View;
@@ -194,7 +191,6 @@
 				4160E42D282120320068DC77 /* EmployeeManagement.xcdatamodeld in Sources */,
 				4160E44728213BAD0068DC77 /* Employee+CoreDataClass.swift in Sources */,
 				4160E434282120F10068DC77 /* AddEmployeeView.swift in Sources */,
-				418186AE282273AC0071795A /* EmployeeDetailView.swift in Sources */,
 				4160E423282120310068DC77 /* ContentView.swift in Sources */,
 				416CEAF128223E0B001A33DF /* ValidationExtension.swift in Sources */,
 				418186B0282278CC0071795A /* EmptyView.swift in Sources */,

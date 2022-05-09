@@ -19,8 +19,6 @@ struct AddEmployeeView: View {
     @State private var gender: String = "Male"
 
     @State private var mobileno: String = ""
-
-     let genders = ["Male", "Female"]
     
     @State private var errorShowing: Bool = false
     @State private var errorTitle: String = ""
@@ -34,23 +32,12 @@ struct AddEmployeeView: View {
                 VStack {
                     VStack(alignment: .leading, spacing: 20) {
                         // MARK: - Emp Name
-                        TextField("Employee Name", text: $name)
+                        TextField("Name", text: $name)
                             .padding()
                             .keyboardType(.phonePad)
                             .background(Color(UIColor.tertiarySystemFill))
-                            .cornerRadius(9)
+                            .cornerRadius(12)
                             .font(.system(size: 18, weight: .semibold, design: .default))
-                        
-                        // MARK: - gender
-                    
-                        Picker("Gender",selection: $gender) {
-                            ForEach(genders, id: \.self)
-                            {
-                                Text($0)
-                                
-                            } // ForEach
-                        } // Picker
-                        .pickerStyle(.segmented)
                         
 
                         
@@ -59,24 +46,24 @@ struct AddEmployeeView: View {
                             .padding()
                             .keyboardType(.numberPad)
                             .background(Color(UIColor.tertiarySystemFill))
-                            .cornerRadius(9)
+                            .cornerRadius(12)
                             .font(.system(size: 18, weight: .semibold, design: .default))
                         
                         
 
                         // MARK: - Email
-                         TextField("Employee Email", text: $email)
+                         TextField("Email", text: $email)
                             .padding()
                             .keyboardType(.emailAddress)
                             .background(Color(UIColor.tertiarySystemFill))
-                            .cornerRadius(9)
+                            .cornerRadius(12)
                             .font(.system(size: 18, weight: .semibold, design: .default))
                         
 
                         
                      // MARK: - save
                        
-                        Button{
+                          Button {
                                    if self.name != ""{
                                        
                                    if !mobileno.isValidPhone{
@@ -97,7 +84,6 @@ struct AddEmployeeView: View {
                                        
                                    let employee = Employee(context:self.managedObjectContext)
                                    employee.name = self.name
-                                   employee.gender = self.gender
                                    employee.mobileno = self.mobileno
                                    employee.email = self.email
                                        
@@ -117,14 +103,16 @@ struct AddEmployeeView: View {
                         
                                    self.presentationMode.wrappedValue.dismiss()
                                } // Button
-                         label: {
+                    label:  {
                                Text("Add Employee")
                                  .font(.system(size: 24, weight: .bold, design: .default))
                                  .frame(minWidth: .zero, maxWidth: .infinity)
+                             
                          } // Label
-                       
-                         .buttonStyle(.borderedProminent)
+                        
+                        .buttonStyle(.borderedProminent)
                          .padding(.vertical)
+                         .cornerRadius(12)
                             
                       Spacer()
                         

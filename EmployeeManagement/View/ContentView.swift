@@ -29,7 +29,7 @@ var body: some View {
                    .foregroundColor(.green)
                     .frame(width: 12, height: 12, alignment: .center)
                     Text(item.name ?? "Unknown")
-                          .fontWeight(.semibold)
+                          .fontWeight(.bold)
                   
                   Spacer()
                       
