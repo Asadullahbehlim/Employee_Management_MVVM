@@ -16,7 +16,6 @@ struct AddEmployeeView: View {
     
     @State private var name: String = ""
     @State private var email: String = ""
-    @State private var gender: String = "Male"
 
     @State private var mobileno: String = ""
     
@@ -68,7 +67,7 @@ struct AddEmployeeView: View {
                                        
                                    if !mobileno.isValidPhone{
                                    errorShowing = true
-                                   errorTitle = "Invalid Mobile Number"
+                                   errorTitle = "Invalid or Incorrect Mobile Number"
                                    errorMessage = "Make sure to enter correct Mobile\nNumber for new Employee Record."
                                        
                                    return
@@ -76,7 +75,7 @@ struct AddEmployeeView: View {
                                    
                                    if !email.isValidEmail{
                                    errorShowing = true
-                                   errorTitle = "Invalid EmailId"
+                                   errorTitle = "Invalid or Incorrect EmailId"
                                    errorMessage = "Make sure to enter correct Email\nId for new Employee Record."
                                        
                                    return
@@ -107,6 +106,7 @@ struct AddEmployeeView: View {
                                Text("Add Employee")
                                  .font(.system(size: 24, weight: .bold, design: .default))
                                  .frame(minWidth: .zero, maxWidth: .infinity)
+                               //  .background(.indigo)
                              
                          } // Label
                         
