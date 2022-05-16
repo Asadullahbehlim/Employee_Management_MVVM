@@ -25,9 +25,12 @@ var body: some View {
             List{
               ForEach(self.employees,id:\.self){item in
                   HStack{
-                    Circle()
-                   .foregroundColor(.green)
-                    .frame(width: 12, height: 12, alignment: .center)
+                      
+//               Circle()
+//                   .foregroundColor(.green)
+//                    .frame(width: 12,
+//        height: 12, alignment: .center)
+                      
                     Text(item.name ?? "Unknown")
                           .fontWeight(.bold)
                   
