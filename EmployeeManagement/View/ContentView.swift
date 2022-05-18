@@ -11,10 +11,13 @@ import CoreData
 struct ContentView: View {
 
     // MARK: - Property
-@Environment(\.managedObjectContext) var managedObjectContext
-
-@FetchRequest(entity: Employee.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Employee.name, ascending: true)]) var employees: FetchedResults<Employee>
     
+    @ObservedObject var empViewModel = EmployeeViewModel.shared
+
+//@Environment(\.managedObjectContext) var managedObjectContext
+//
+//@FetchRequest(entity: Employee.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Employee.name, ascending: true)]) var employees: FetchedResults<Employee>
+//
 @State private var showingAddEmployeeView:Bool = false
     
    // MARK: - Body
@@ -23,14 +26,8 @@ var body: some View {
     NavigationView{
         ZStack {
             List{
-              ForEach(self.employees,id:\.self){item in
+              ForEach(empViewModel.employees,id:\.self){item in
                   HStack{
-                      
-//               Circle()
-//                   .foregroundColor(.green)
-//                    .frame(width: 12,
-//        height: 12, alignment: .center)
-                      
                     Text(item.name ?? "Unknown")
                           .fontWeight(.bold)
                   
@@ -48,12 +45,15 @@ var body: some View {
                   Image(systemName:"plus")
               } // Label
               .sheet(isPresented:$showingAddEmployeeView){
-                  AddEmployeeView().environment(\.managedObjectContext,self.managedObjectContext)
+                  AddEmployeeView()
               } // sheet
           ) // Navig Bar Items
          .navigationTitle("Employee")
         .navigationBarTitleDisplayMode(.inline)
-            if employees.count == 0 {
+        .onAppear() {
+            empViewModel.getAllEmployees()
+        }
+            if empViewModel.employees.count == 0 {
             EmptyView()
             }
         }// zstack
@@ -65,16 +65,12 @@ var body: some View {
 // MARK: - funtions
 
 private func deleteEmployee(at offsets:IndexSet){
-    for index in offsets{
-        let employee = employees[index]
-        managedObjectContext.delete(employee)
-        do{
-            try self.managedObjectContext.save()
-        } // do
-        catch{
-            print(error)
-        } // catch
-    } // For
+    offsets.forEach{index in
+            let emp = empViewModel.employees[index]
+        empViewModel.delete(emp)
+        }
+    empViewModel.getAllEmployees()
+    
 } // Function
 
 } // Struct

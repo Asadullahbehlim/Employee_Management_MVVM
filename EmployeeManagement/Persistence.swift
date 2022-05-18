@@ -34,6 +34,44 @@ struct PersistenceController {
     }()
 
     let container: NSPersistentContainer
+    
+    var viewContext: NSManagedObjectContext {
+                return container.viewContext
+        }
+        
+        func getEmployeeById(id:NSManagedObjectID) -> Employee?{
+            do{
+            return try viewContext.existingObject(with:id) as? Employee
+            }catch{
+            return nil
+            }
+        }
+    
+    func deleteEmployee(employee:Employee){
+         viewContext.delete(employee)
+         save()
+     }
+     
+     func getAllEmployees() -> [Employee] {
+         
+         let request: NSFetchRequest<Employee> = Employee.fetchRequest()
+         
+         do {
+             return try viewContext.fetch(request)
+         } catch {
+             return []
+         }
+     }
+     
+     func save() {
+             do {
+                 try viewContext.save()
+             } catch {
+                 viewContext.rollback()
+                 print(error.localizedDescription)
+             }
+     }
+
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "EmployeeManagement")

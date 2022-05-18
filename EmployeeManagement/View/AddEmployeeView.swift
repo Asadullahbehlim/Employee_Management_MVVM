@@ -10,19 +10,23 @@ import SwiftUI
 struct AddEmployeeView: View {
     
     // MARK: - Property
-    @Environment(\.managedObjectContext) var managedObjectContext
     
-    @Environment(\.presentationMode) var presentationMode
-    
-    @State private var name: String = ""
-    @State private var email: String = ""
+    @ObservedObject var empViewModel = EmployeeViewModel.shared
 
-    @State private var mobileno: String = ""
     
+//    @Environment(\.managedObjectContext) var managedObjectContext
+//
+    @Environment(\.presentationMode) var presentationMode
+//
+//    @State private var name: String = ""
+//    @State private var email: String = ""
+//
+//    @State private var mobileno: String = ""
+//
     @State private var errorShowing: Bool = false
     @State private var errorTitle: String = ""
     @State private var errorMessage: String = ""
-    
+
 
     // MARK: - Body
 
@@ -31,7 +35,7 @@ struct AddEmployeeView: View {
                 VStack {
                     VStack(alignment: .leading, spacing: 20) {
                         // MARK: - Emp Name
-                        TextField("Name", text: $name)
+                        TextField("Name", text: $empViewModel.name)
                             .padding()
                             .keyboardType(.phonePad)
                             .background(Color(UIColor.tertiarySystemFill))
@@ -41,7 +45,7 @@ struct AddEmployeeView: View {
 
                         
                         // MARK: - Mobile
-                         TextField("Mobile No.", text: $mobileno)
+                        TextField("Mobile No.", text: $empViewModel.mobileno)
                             .padding()
                             .keyboardType(.numberPad)
                             .background(Color(UIColor.tertiarySystemFill))
@@ -51,7 +55,7 @@ struct AddEmployeeView: View {
                         
 
                         // MARK: - Email
-                         TextField("Email", text: $email)
+                        TextField("Email", text: $empViewModel.email)
                             .padding()
                             .keyboardType(.emailAddress)
                             .background(Color(UIColor.tertiarySystemFill))
@@ -63,9 +67,9 @@ struct AddEmployeeView: View {
                      // MARK: - save
                        
                           Button {
-                                   if self.name != ""{
+                                   if empViewModel.name != ""{
                                        
-                                   if !mobileno.isValidPhone{
+                                if !empViewModel.mobileno.isValidPhone{
                                    errorShowing = true
                                    errorTitle = "Invalid or Incorrect Mobile Number"
                                    errorMessage = "Make sure to enter correct Mobile\nNumber for new Employee Record."
@@ -73,7 +77,7 @@ struct AddEmployeeView: View {
                                    return
                                    }
                                    
-                                   if !email.isValidEmail{
+                            if !empViewModel.email.isValidEmail{
                                    errorShowing = true
                                    errorTitle = "Invalid or Incorrect EmailId"
                                    errorMessage = "Make sure to enter correct Email\nId for new Employee Record."
@@ -81,18 +85,22 @@ struct AddEmployeeView: View {
                                    return
                                    }
                                        
-                                   let employee = Employee(context:self.managedObjectContext)
-                                   employee.name = self.name
-                                   employee.mobileno = self.mobileno
-                                   employee.email = self.email
-                                       
-                                   do{
-                                   try self.managedObjectContext.save()
-                                   }
-                                   catch{
-                                   print(error)
+                                empViewModel.save()
+                                empViewModel.getAllEmployees()
                                 
-                                   }
+                                       
+//                 let employee = Employee(context:self.managedObjectContext)
+//                                   employee.name = self.name
+//                                   employee.mobileno = self.mobileno
+//                                   employee.email = self.email
+//
+//                                   do{
+//                                   try        self.managedObjectContext.save()
+//                                   }
+//                                   catch{
+//                                   print(error)
+//
+//                                   }
                                    } else{
                                        errorShowing = true
                                        errorTitle = "Invalid Name"
